@@ -1,6 +1,5 @@
 import React from "react";
 // import { withRouter } from "react-router-dom";
-
 import "./country-card.styles.scss";
 
 const Country = ({ name, flag, population, region, capital, cioc }) => (
@@ -13,7 +12,7 @@ const Country = ({ name, flag, population, region, capital, cioc }) => (
 			<h4>{name}</h4>
 			<p>
 				{" "}
-				<b>Populatiion</b> : {population}
+				<b>Populatiion</b> : {population.toLocaleString()}
 			</p>
 			<p>
 				{" "}
