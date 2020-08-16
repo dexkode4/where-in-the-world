@@ -1,6 +1,6 @@
 import React from "react";
 import Country from "../card/country-card.component";
-import AOS from "aos";
+// import AOS from "aos";
 
 import "./directory.styles.scss";
 
