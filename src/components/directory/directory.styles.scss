@@ -1,0 +1,6 @@
+.directory-menu {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25rem, max-content));
+	gap: 50px;
+	margin: 70px;
+}
