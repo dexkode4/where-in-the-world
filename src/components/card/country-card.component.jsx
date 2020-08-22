@@ -1,15 +1,22 @@
 import React from "react";
-// import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./country-card.styles.scss";
 
-const Country = ({ name, flag, population, region, capital, cioc }) => (
-	<div class="country-card">
-		<div class="country-card-logo">
-			<img src={flag} alt={cioc} />
+
+let countryName = '';
+const Country = ({ name, flag, population, region, capital, history,match}) => (
+	<div className="country-card"
+	onClick={() =>{
+		history.push(`${match.url}${name}`)
+		countryName = name;
+	}}
+		>
+		<div className="country-card-logo">
+			<img src={flag} alt={name} />
 		</div>
 
-		<div class="container">
-			<h4>{name}</h4>
+		<div className="container">
+			<h4 className="name">{name}</h4>
 			<p>
 				{" "}
 				<b>Populatiion</b> : {population.toLocaleString()}
@@ -26,4 +33,5 @@ const Country = ({ name, flag, population, region, capital, cioc }) => (
 	</div>
 );
 
-export default Country;
+export default withRouter(Country);
+export {countryName}

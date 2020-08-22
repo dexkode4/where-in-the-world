@@ -1,7 +1,5 @@
 import React from "react";
 import Country from "../card/country-card.component";
-// import AOS from "aos";
-
 import "./directory.styles.scss";
 
 class Directory extends React.Component {
@@ -9,22 +7,29 @@ class Directory extends React.Component {
 		super();
 
 		this.state = {
+			isLoaded: false,
 			data: [],
 		};
 	}
 
 	async componentDidMount() {
-		const response = await fetch("https://restcountries.eu/rest/v2/all");
+		const URL = 'https://restcountries.eu/rest/v2/all'
+		const response = await fetch(URL);
 		const json = await response.json();
-		this.setState({ data: json });
-		console.log(json);
+		this.setState({ data: json,
+			isLoaded: true, });
 	}
 
 	render() {
+		const {data,isLoaded} = this.state;
+		if (!isLoaded) {
+			return <div className="loading"><h1>Loading...</h1></div>;}
 		return (
-			<div className="directory-menu" data-aos={"fade-left"}>
-				{this.state.data.map(({ cioc, ...otherProps }) => (
-					<Country key={cioc} {...otherProps} />
+			<div className="directory-menu" >
+				{data.map(({ numericCode, ...otherProps }) => (
+					
+					<Country key={numericCode} {...otherProps} /> 
+					
 				))}
 			</div>
 		);

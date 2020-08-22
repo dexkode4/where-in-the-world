@@ -4,4 +4,9 @@
 	gap: 50px;
 	margin: 70px;
 	justify-content: center;
+
+	& .country-list__link {
+		text-decoration: none;
+		color: #000;
+	}
 }
