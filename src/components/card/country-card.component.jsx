@@ -6,7 +6,7 @@ import "./country-card.styles.scss";
 let countryName = '';
 const Country = ({ name, flag, population, region, capital, history,match}) => (
 	<div className="country-card"
-	onClick={() =>{
+	onClick={() => {
 		history.push(`${match.url}${name}`)
 		countryName = name;
 	}}

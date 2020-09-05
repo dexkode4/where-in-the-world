@@ -18,6 +18,7 @@ class Directory extends React.Component {
 		const json = await response.json();
 		this.setState({ data: json,
 			isLoaded: true, });
+			console.log(json);
 	}
 
 	render() {
