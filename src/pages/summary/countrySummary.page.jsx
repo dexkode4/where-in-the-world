@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-// import { countryName } from "../../components/card/country-card.component";
 import Back from "../../components/utils/back.component";
 import Border from "../../components/utils/border.component"
 class CountrySummary extends React.Component {
