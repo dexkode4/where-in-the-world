@@ -3,12 +3,12 @@ import { withRouter } from "react-router-dom";
 import "./country-card.styles.scss";
 
 
-let countryName = '';
 const Country = ({ name, flag, population, region, capital, history,match}) => (
 	<div className="country-card"
 	onClick={() => {
+		console.log(history)
 		history.push(`${match.url}${name}`)
-		countryName = name;
+		
 	}}
 		>
 		<div className="country-card-logo">
@@ -34,4 +34,3 @@ const Country = ({ name, flag, population, region, capital, history,match}) => (
 );
 
 export default withRouter(Country);
-export {countryName}
