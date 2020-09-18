@@ -1,12 +1,21 @@
 .directory-menu {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(25rem, max-content));
-	gap: 50px;
 	margin: 70px;
-	justify-content: center;
+	&-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 300px);
+		align-content: start;
+		gap: 40px;
 
-	& .country-list__link {
-		text-decoration: none;
-		color: #000;
+		justify-content: space-between;
+
+		& .country-list__link {
+			text-decoration: none;
+			color: #000;
+		}
+	}
+
+	&-filter {
+		display: flex;
+		justify-content: space-between;
 	}
 }
