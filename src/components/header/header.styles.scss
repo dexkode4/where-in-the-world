@@ -1,0 +1,36 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	height: 60px;
+	background: #fff;
+	align-items: center;
+	box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.1);
+	position: sticky;
+	z-index: 1;
+	top: 0;
+	margin-bottom: 40px;
+	@media (max-width: 420px) {
+		height: 90px;
+		padding: 0 20px;
+	}
+	&__title {
+		font-size: 20px;
+		font-weight: 700;
+		margin-left: 70px;
+		@media (max-width: 420px) {
+			margin: 0;
+			font-size: 16px;
+		}
+	}
+
+	&__toggle {
+		margin-right: 70px;
+		font-weight: 600;
+		text-transform: capitalize;
+		@media (max-width: 420px) {
+			margin: 0;
+			font-size: 12px;
+			font-weight: 0;
+		}
+	}
+}

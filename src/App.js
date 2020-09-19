@@ -4,7 +4,7 @@ import './App.css';
 import HomePage from './pages/homepage/homepage';
 import Header from './components/header/header.component';
 import CountrySummary from './pages/summary/countrySummary.page'
-import CountryByRegion from './pages/region/region'
+// import CountryByRegion from './pages/region/region'
 
 function App() {
 
@@ -14,9 +14,6 @@ function App() {
     <div>
       <Header />
       <Switch>
-        <Route path="/region/:region">
-          <CountryByRegion />
-        </Route>
         <Route path="/:country">
           <CountrySummary />
         </Route>
