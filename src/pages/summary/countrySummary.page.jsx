@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Border from "../../components/utils/border.component";
-import { MoonLoader } from "react-spinners";
+import { AtomSpinner } from "react-epic-spinners";
 import "./countrySummary.styles.scss";
 class CountrySummary extends React.Component {
 	constructor() {
@@ -41,7 +41,7 @@ class CountrySummary extends React.Component {
 		if (!isLoaded) {
 			return (
 				<div className="loading">
-					<MoonLoader loading />
+					<AtomSpinner size={100} color="#7f8c8d" />
 				</div>
 			);
 		}
@@ -93,17 +93,15 @@ class CountrySummary extends React.Component {
 									<p>
 										{" "}
 										<b>Currency:</b>{" "}
-										{data[0].currencies.map(currency => 
-											curr += `${currency.name}, `
+										{data[0].currencies.map(
+											currency => (curr += `${currency.name}, `)
 										)}
 										{curr.slice(0, curr.length - 2)}
 									</p>
 									<p>
 										{" "}
 										<b>Languages:</b>{" "}
-										{data[0].languages.map(lang =>
-											langs += `${lang.name}, `
-										)}
+										{data[0].languages.map(lang => (langs += `${lang.name}, `))}
 										{langs.slice(0, langs.length - 2)}
 									</p>
 								</div>

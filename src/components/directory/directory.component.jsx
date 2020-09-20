@@ -4,7 +4,7 @@ import { FilterAll } from "../filter/filter.component";
 import { withRouter } from "react-router-dom";
 import "./directory.styles.scss";
 import { Dropdown, Grid } from "semantic-ui-react";
-import { MoonLoader } from "react-spinners";
+import { AtomSpinner } from 'react-epic-spinners';
 
 const options = [
 	{ key: 1, text: "All", value: "" },
@@ -49,7 +49,7 @@ class Directory extends React.Component {
 		if (!isLoaded) {
 			return (
 				<div className="loading">
-					<MoonLoader loading />
+					<AtomSpinner size ={100} color = "#7f8c8d"  />
 				</div>
 			);
 		}
