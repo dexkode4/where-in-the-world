@@ -1,7 +1,8 @@
 import React from "react";
-import { withRouter ,Link} from "react-router-dom";
-import Border from "../../components/utils/border.component"
-import './countrySummary.styles.scss';
+import { withRouter, Link } from "react-router-dom";
+import Border from "../../components/utils/border.component";
+import { MoonLoader } from "react-spinners";
+import "./countrySummary.styles.scss";
 class CountrySummary extends React.Component {
 	constructor() {
 		super();
@@ -10,13 +11,13 @@ class CountrySummary extends React.Component {
 			isLoaded: false,
 			data: [],
 			error: null,
-			borders:[],
-			bordersCountryNames:[]
+			borders: [],
+			bordersCountryNames: [],
 		};
 	}
 
 	async componentDidMount() {
-		const name =  this.props.match.params.country;
+		const name = this.props.match.params.country;
 		console.log(this.props.match);
 		const URL = `https://restcountries.eu/rest/v2/name/${name}`;
 		try {
@@ -29,8 +30,6 @@ class CountrySummary extends React.Component {
 				error,
 			});
 		}
-		
-		
 	}
 
 	render() {
@@ -42,8 +41,7 @@ class CountrySummary extends React.Component {
 		if (!isLoaded) {
 			return (
 				<div className="loading">
-					{" "}
-					<h1>Loading...</h1>{" "}
+					<MoonLoader loading />
 				</div>
 			);
 		}
@@ -52,8 +50,12 @@ class CountrySummary extends React.Component {
 		return (
 			<div>
 				<div className="container-summary">
-					<div className="back btn"
-					onClick={()=> this.props.history.push('/')}><i class="fas fa-long-arrow-alt-left"></i>  Back </div>
+					<div
+						className="back btn"
+						onClick={() => this.props.history.push("/")}
+					>
+						<i class="fas fa-long-arrow-alt-left"></i> Back{" "}
+					</div>
 					<div className="summary">
 						<div className="summary_flag">
 							<img src={data[0].flag} alt={data[0].name} />
@@ -107,12 +109,10 @@ class CountrySummary extends React.Component {
 								</div>
 							</div>
 							<div className="summary_details-footer">
-								{data[0].borders.length === 0 ? null : <b>Border Countries:</b>  }
-									{data[0].borders.map( border => ( <Border key={border} code={border}/> ))}
-									{/* {data[0].borders.map( border => ( <div key={border}>{border}</div> ))} */}
-									{/* {borderssummaryNames.map(name => <div onClick ={()=> {
-										window.location = `/${name}`;
-									}}>{name}</div>)} */}
+								{data[0].borders.length === 0 ? null : <b>Border Countries:</b>}
+								{data[0].borders.map(border => (
+									<Border key={border} code={border} />
+								))}
 							</div>
 						</div>
 					</div>

@@ -28,7 +28,7 @@
 		&-all {
 			flex: 0.4;
 			padding: 15px;
-			height: 60px;
+			height: 52px;
 			border-radius: 5px;
 			box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.1);
 			border: none;
@@ -77,4 +77,14 @@
 			padding-right: 20px;
 		}
 	}
+}
+.ui.selection.dropdown .menu {
+	max-height: min-content;
+}
+
+.loading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
 }

@@ -4,6 +4,7 @@ import { FilterAll } from "../filter/filter.component";
 import { withRouter } from "react-router-dom";
 import "./directory.styles.scss";
 import { Dropdown, Grid } from "semantic-ui-react";
+import { MoonLoader } from "react-spinners";
 
 const options = [
 	{ key: 1, text: "All", value: "" },
@@ -17,7 +18,6 @@ const options = [
 class Directory extends React.Component {
 	constructor() {
 		super();
-
 		this.state = {
 			isLoaded: false,
 			data: [],
@@ -49,7 +49,7 @@ class Directory extends React.Component {
 		if (!isLoaded) {
 			return (
 				<div className="loading">
-					<h1>Loading...</h1>
+					<MoonLoader loading />
 				</div>
 			);
 		}
@@ -68,7 +68,7 @@ class Directory extends React.Component {
 									<Dropdown
 										onChange={this.handleChange2}
 										options={options}
-										placeholder="Filter a region"
+										placeholder="Filter by region"
 										selection
 										value={this.state.value}
 									/>
