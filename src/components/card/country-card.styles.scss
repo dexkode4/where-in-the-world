@@ -9,6 +9,7 @@
 	cursor: pointer;
 	width: 100%;
 	margin-bottom: 40px;
+	transition: all 0.3s ease-in;
 	&-logo img {
 		object-fit: cover;
 		width: 100%;

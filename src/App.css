@@ -1,3 +1,4 @@
 body {
 	/* background-color: #fafafa; */
+	transition: all 0.3s ease-in;
 }
