@@ -5,12 +5,11 @@
 	// }
 	&-list {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, 300px);
+		grid-template-columns: repeat(auto-fill, 280px);
 		align-content: start;
-		gap: 50px;
-
-		justify-content: center;
-
+		gap: 20px;
+		justify-content: space-evenly;
+		margin: 0 40px;
 		& .country-list__link {
 			text-decoration: none;
 			color: #000;
@@ -37,10 +36,11 @@
 			border-radius: 5px;
 			box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.1);
 			border: none;
-
+			margin-left: 25px;
 			@media (max-width: 530px) {
 				flex: 1;
 				display: block;
+				margin: 0 auto;
 				margin-bottom: 50px;
 				height: 50px;
 				width: 90%;
@@ -48,8 +48,11 @@
 		}
 
 		&-region {
+			margin-right: 25px;
+
 			@media (max-width: 530px) {
 				align-self: flex-start;
+				margin: 0 auto;
 				margin-left: 20px;
 				margin-top: -5px;
 			}
