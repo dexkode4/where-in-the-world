@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import "./header.styles.scss";
-import { ThemeProvider, createGlobalStyle } from "styled-components";
-// #212E37 #2B3743 color: ${props => (props.theme.mode === "dark" ? "#fff" : "#000")};
 
 const Header = ({ handleToggle }) => {
 	return (

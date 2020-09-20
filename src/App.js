@@ -4,7 +4,6 @@ import "./App.css";
 import HomePage from "./pages/homepage/homepage";
 import Header from "./components/header/header.component";
 import CountrySummary from "./pages/summary/countrySummary.page";
-import BorderCountry from "./border.country";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 // #212E37
 const GlobalStyle = createGlobalStyle`
@@ -54,9 +53,6 @@ function App() {
         <div>
           <Header handleToggle={(e) => setTheme(theme.mode === "dark" ? { mode: "light" } : { mode: "dark" })} />
           <Switch>
-            {/* <Route path="/border/:country">
-          <BorderCountry />
-        </Route> */}
             <Route path="/:country">
               <CountrySummary />
             </Route>
