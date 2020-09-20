@@ -12,74 +12,89 @@
 	width: max-content;
 	padding: 10px 25px;
 	cursor: pointer;
-	// margin-bottom: 60px;
 	background-color: #fff;
 	border-radius: 5px;
 	& i {
 		margin-right: 10px;
 	}
+	@media (max-width: 530px) {
+		font-size: 14px;
+		padding: 8px 23px;
+	}
 }
+
 .container-summary {
+	// width: 100vh;
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: flex-start;
 	@media (max-width: 530px) {
 		font-size: 10px;
 	}
 	margin: 75px;
-	& .back_btn {
-		font-size: 20px;
-		box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.2);
-		width: max-content;
-		padding: 10px 25px;
-		cursor: pointer;
-		margin-bottom: 60px;
-		background-color: #fff;
-		border-radius: 5px;
-		& i {
-			margin-right: 10px;
+	& .back {
+		@media (max-width: 530px) {
+			margin-left: -50px;
 		}
 	}
+}
 
-	& .summary {
-		display: flex;
-		justify-content: space-between;
-		font-size: 20px;
-		flex-wrap: wrap;
+.summary {
+	display: flex;
+	justify-content: space-between;
+	font-size: 20px;
+	flex-wrap: wrap;
+	@media (max-width: 530px) {
+		justify-content: center;
+	}
 
-		&_flag {
-			margin-bottom: 30px;
-			& img {
-				width: 100%;
-				@media (min-width: 768px) {
-					max-width: 560px;
-					max-height: 400px;
-				}
-				@media (max-width: 420px) {
-					width: ;
+	&_flag {
+		margin-bottom: 30px;
+		& img {
+			width: 100vw;
+			@media (min-width: 768px) {
+				max-width: 560px;
+				max-height: 400px;
+			}
+			@media (max-width: 530px) {
+				width: 90vw;
+			}
+		}
+	}
+	&_details {
+		flex: 0.8;
+
+		@media (max-width: 530px) {
+			font-size: 16px;
+			width: 100%;
+		}
+
+		&-header {
+			font-size: 25px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+
+		&-body {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			&--1 {
+				@media (max-width: 530px) {
+					margin-bottom: 20px;
 				}
 			}
 		}
-		&_details {
-			flex: 0.8;
-			&-header {
-				font-size: 25px;
-				font-weight: bold;
+
+		&-footer {
+			margin-top: 50px;
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			& b {
+				margin-right: 10px;
 				margin-bottom: 20px;
-			}
-
-			&-body {
-				display: flex;
-				justify-content: space-between;
-				flex-wrap: wrap;
-			}
-
-			&-footer {
-				margin-top: 50px;
-				display: flex;
-				justify-content: flex-start;
-				align-items: flex-start;
-				flex-wrap: wrap;
-				& b {
-					margin-right: 10px;
-				}
 			}
 		}
 	}
