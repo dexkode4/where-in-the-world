@@ -49,7 +49,7 @@ class Directory extends React.Component {
 		if (!isLoaded) {
 			return (
 				<div className="loading">
-					<AtomSpinner size ={100} color = "#7f8c8d"  />
+					<AtomSpinner size ={100}  />
 				</div>
 			);
 		}

@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import Border from "../../components/utils/border.component";
 import { AtomSpinner } from "react-epic-spinners";
 import "./countrySummary.styles.scss";
+
 class CountrySummary extends React.Component {
 	constructor() {
 		super();
@@ -33,7 +34,6 @@ class CountrySummary extends React.Component {
 	}
 
 	render() {
-		console.log(this.state.bordersCountryNames);
 		const { data, isLoaded, error } = this.state;
 		if (error) {
 			return <div>Error: {error.message}</div>;
