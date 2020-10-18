@@ -23,11 +23,12 @@ class Directory extends React.Component {
 			data: [],
 			searchField: "",
 			value: "",
+			name:""
 		};
 	}
-	handleChange2 = (e, { value }) => {
+	handleChange2 = (e, {value,name}) => {
 		this.setState({ value });
-		console.log(value);
+		console.log(name);
 	};
 
 	handleChange = e => this.setState({ searchField: e.target.value });
@@ -39,12 +40,17 @@ class Directory extends React.Component {
 	}
 
 	render() {
-		const { data, isLoaded, searchField, value } = this.state;
-		const filteredCountries = data.filter(country => {
-			if (searchField !== "")
-				return country.name.toLowerCase().includes(searchField.toLowerCase());
-			else return country.region.toLowerCase().includes(value.toLowerCase());
-		});
+		let { data, isLoaded, searchField, value } = this.state;
+		data = data.filter(country => country.name.toLowerCase().includes(searchField.toLowerCase()))
+
+		data = data.filter(country => {
+			if(value === ""){
+				return country;
+			}
+			else{
+				return country.region.toLowerCase().includes(value.toLowerCase());
+			}
+		})
 
 		if (!isLoaded) {
 			return (
@@ -66,11 +72,11 @@ class Directory extends React.Component {
 							<Grid columns={2} className="filterRegion">
 								<Grid.Column>
 									<Dropdown
-										onChange={this.handleChange2}
-										options={options}
-										placeholder="Filter by region"
+										onChange = {this.handleChange2}
+										options = {options}
+										placeholder = "Filter by region"
 										selection
-										value={this.state.value}
+										value = {this.state.value}
 									/>
 								</Grid.Column>
 							</Grid>
@@ -78,7 +84,7 @@ class Directory extends React.Component {
 					</div>
 
 					<div className="directory-menu-list">
-						{filteredCountries.map(({ numericCode, ...otherProps }) => (
+						{data.map(({ numericCode, ...otherProps }) => (
 							<Country key={numericCode} {...otherProps} />
 						))}
 					</div>
